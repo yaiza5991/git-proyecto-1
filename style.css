@@ -1,0 +1,1096 @@
+:root {
+  --background-color: #ffffff;
+  --background-color-footer: #262626;
+  --primary-font-color: #262626;
+  --image-font-color: #ffffff;
+  --sales-font-color: #ff6250;
+  --footer-font-color: #ffffff;
+}
+
+/* RESET */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+  font-family: "Roboto", sans-serif;
+  color: inherit;
+}
+
+/* GLOBAL STYLES*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background-color);
+  font-color:var(--primary-font-color)
+  padding: 0 3.75rem;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 2.9rem;
+  font-weight: 350;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+h4 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+
+/* HEADER */
+
+header {
+  background-image: url(https://res.cloudinary.com/denhjko8q/image/upload/v1679512709/230321-Banner-Desktop-Homepage-Easter_d0b395cd-d8b9-4646-b7d8-bc9c7dde6b2f_1950x_yi2x0g.jpg);
+  background-size: cover;
+  background-position-x: center;
+  height: 770px;
+  width: 100%;
+}
+
+
+header > nav > section {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 35px;
+  margin-top: 0px;
+}
+
+header > nav > section > .hamburger {
+  display: flex;
+  padding: 0, 2rem;
+}
+header > nav > section > .hamburger > ul {
+  display: flex;
+  height: 10vh;
+  gap: 5vh;
+  padding-left: 2.3rem;
+} 
+
+.rc-section-header--nav-link_1 {
+  display: flex;
+  flex-direction: column;
+  font-size: 25px;
+  text-decoration: none;
+  justify-content: space-betwee;
+  color: black;
+  padding-top: 1rem;
+}
+
+li > .rc-section-header--nav-link_2 {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  justify-content: space-around;
+  text-decoration: none;
+  color: black;
+  padding-bottom: .8rem;
+}
+
+
+.hamburger-in::after {
+  content: "";
+  width: 0px;
+  height: 2px;
+  position: relative;
+  top: 5px;
+  transition: all 0.4s ease-in-out;
+}
+
+.hamburger-in:hover::after {
+  width: 100%;
+}
+
+
+/* HIDE HAMBURGER */
+.hamburger-label,
+.hamburger-in {
+  display: none;
+}
+
+
+/* hide nav*/
+
+.section-nav {
+  display: none;
+}
+
+@media screen and (min-width: 991px) {
+
+  /* SHOW HAMBURGER ICON */
+  .hamburger-label {
+    display: block;
+    padding: 0 0 0 2%;
+    z-index: 12;
+  }
+
+  /* TOGGLE SHOW/HIDE NAV */
+  .section-nav {
+    display: none;
+  }
+
+  /* WHEN CHECKED -> GENERAL SIBLING COMBINATOR */
+  .hamburger-in:checked+.section-nav {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 2px;
+    z-index: 3;
+    bottom: 0;
+  }
+
+  .hamburger-in:checked+.section-nav {
+    padding: 10px;
+    margin: 0;
+  }
+
+  .hamburger-in:checked+.section-nav li {
+    margin: 20px;
+  }
+
+  /* COLUMN NAV ITEMS */
+  .section-nav {
+    flex-direction: column;
+    margin-left: 0;
+    opacity: 1;
+    font-weight: 200;
+    background-color: white; 
+  }
+}
+
+header > nav > section > .logo > img {
+  height: 4vh;
+  size: 2vh;
+  align-items: center;
+  width: auto;
+}
+
+header > nav > section > .links {
+  gap: 1rem;
+  padding-right: 3%;
+}
+
+header > nav > section > .links > ul {
+  display: flex;
+  gap: 1.2rem;
+}
+
+header > nav > section > .links > ul > li > a > img {
+  size: 6vh; 
+  height: 2.1rem;
+  align-items: first baseline;
+}
+
+.cart {
+  height: 27px;
+  width: 31px;
+}
+
+header > .header-description {
+  padding-left: 9vh;
+  padding-top: 25vh;
+}
+
+header > .header-description > h2 {
+  padding-bottom: 8px;
+ 
+}
+
+header > .header-description > p {
+  font-weight: 300;
+  padding-bottom: 1.5rem;
+}
+
+header > .header-description > button {
+  border-color: transparent;
+background-color: #3ed19f;
+padding: 0.6rem 3.5rem;
+color: var(--primary-font-color);
+width: fit-content;
+height: fit-content;
+border-radius: 2rem;
+font-size: 16px;
+font-weight:300;
+}
+
+@media screen and (min-width:489px) and (max-width:880px) {
+  header {
+    background-image: url(https://res.cloudinary.com/denhjko8q/image/upload/v1679512709/230321-Banner-Desktop-Homepage-Easter_d0b395cd-d8b9-4646-b7d8-bc9c7dde6b2f_1950x_yi2x0g.jpg);
+    background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  height: 770px;
+  width: 100%;
+  }
+
+header > .header-description {
+padding-left: 1vh;
+margin-top: 2vh;
+}
+
+header > .header-description > h2 {
+  padding-bottom: 8px;
+}
+
+header > .header-description > p {
+  font-weight: 300;
+  padding-bottom: 1.5rem;
+}
+
+header > .header-description > button {
+border-color: transparent;
+background-color: #3ed19f;
+padding: 0.6rem 3.5rem;
+color: var(--primary-font-color);
+width: fit-content;
+height: fit-content;
+border-radius: 2rem;
+font-size: 16px;
+font-weight:300;
+}
+}
+
+@media screen and (min-width:150px) and (max-width:489px) {
+  header {
+    background-image: url(https://res.cloudinary.com/denhjko8q/image/upload/v1679512671/230321-Banner-Mobile-Homepage-Easter_c0a0f5e9-5622-4e76-b8e1-289f88b43745_810x_g1nsna.jpg);
+    background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  height: 770px;
+  width: 100%;
+  }
+
+ .header-description {
+   padding-left: 1vh;
+   margin-top: 1rem;
+}
+
+    header > .header-description > h2 {
+      padding-bottom: 8px;
+    }
+    
+    header > .header-description > p {
+      font-weight: 300;
+      padding-bottom: 1.5rem;
+    }   
+}
+
+/* main */
+
+/*section1*/
+
+main> .about-tropicfeel {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+main> .about-tropicfeel > p {
+  justify-content: center;
+  text-align: center;
+  padding-top: 3.5rem;
+  padding-bottom: 1.7rem;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+main > .about-tropicfeel > h3 {
+  font-size: 1.9rem;
+  font-weight: 295;
+  font-family: "Roboto", sans-serif;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  text-align: center;
+  padding-bottom: 1rem;
+
+}
+main > .about-tropicfeel > h3 > span {
+  font-weight: 350;
+}
+
+main > .about-tropicfeel > h4 {
+  justify-content: center;
+  text-align: center;
+  font-size: 1.9rem;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  font-weight: 350;
+}
+
+/*section2 buttons*/
+
+main > .Shop > .buttons > .static-button {
+  background-color: var(--background-color-footer);
+  color: var(--footer-font-color);
+  border-color: transparent;
+  width: fit-content;
+  padding: 0.6rem 0.9rem;
+  margin-left: 4rem;
+height: fit-content;
+border-radius: 2.2rem;
+font-size: 1rem;
+font-weight:280;
+
+}
+
+main > .Shop > .buttons > .dinamic-button {
+  background-color: var(--background-color);
+  color: var(--primary-font-color);
+  border: 1px solid;
+  border-radius: 900px;
+  width: fit-content;
+  box-shadow: none;
+  padding: 0.6rem 0.9rem;
+  margin-left: 1.5rem;
+height: 2.7rem;
+font-size: 1rem;
+font-weight:280;
+margin-bottom: 2rem;
+}
+
+main > .Shop > .buttons > .dinamic-button {
+  transition: color 0.4s ease-in-out;
+  transition: color 0.4 ease-out;
+}
+main > .Shop > .buttons > .dinamic-button:hover { 
+  background-color: var(--background-color-footer);
+  color:var(--background-color);
+}
+
+/*section2 best selling images*/
+
+main > .Shop > .best-sellers {
+  display: flex;
+  gap: 2vh;
+  padding-left: 3.75rem;
+  padding-bottom: 3rem;
+  align-items: stretch;
+  align-self: stretch;
+  justify-content: flex-start;
+  overflow: hidden;
+  overflow-x: visible;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+ 
+}
+
+.Shop > .best-sellers > picture > a > img {
+  height: 55vh;
+  width: 55vh; 
+ }
+
+ figcaption {
+  font-size: 15px;
+  font-weight: 300;
+  text-align: left;
+  margin-top: 1rem;
+ }
+
+ .names-products >p {
+  margin-top: 1rem;
+ }
+
+
+ @media screen and (min-width: 650px) and (max-width: 991px) {
+
+  main > .Shop > .buttons > .static-button {
+    margin-left: 3rem;
+  } 
+
+  main > .Shop > .best-sellers {
+    padding-left: 3rem;
+  }
+  
+  .Shop > .best-sellers > picture > a > img {
+    height: 45vh;
+    width: 45vh; 
+   }
+ }
+
+ @media screen and (min-width: 355px) and (max-width: 650px) {
+  
+  main > .Shop > .buttons > .static-button {
+    margin-left: 2rem;
+  } 
+
+  main > .Shop > .best-sellers {
+    padding-left: 2rem;
+  }
+  
+  .Shop > .best-sellers > picture > a > img {
+    height: 35vh;
+    width: 35vh; 
+   }
+ }
+
+ @media screen and (min-width: 150px) and (max-width: 355px) {
+
+  main > .Shop > .buttons > .static-button {
+    margin-left: 1rem;
+  } 
+
+  main > .Shop > .buttons > .dinamic-button {
+    margin-left: 1rem;
+    margin-top: 1rem;
+  }
+
+  main > .Shop > .best-sellers {
+    padding-left: 1rem;
+  }
+  
+  .Shop > .best-sellers > picture > a > img {
+    height: 25vh;
+    width: 25vh; 
+   }
+ }
+
+/*2ºarticle"*/
+
+
+main> .Shop > .Sneakers {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+main > .Shop > .section2-2-title > h3{
+  font-weight: 300;
+  font-size: 1.8rem;
+  font-family: "roboto", sans-serif;
+  color: var(--primary-font-color);
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
+  padding-right: 3%;
+}
+
+main> .Shop > .Sneakers > .weatherproof {
+  background-image: url(https://res.cloudinary.com/denhjko8q/image/upload/v1680461445/Weatherproof_950d4ba3-5525-4941-beb5-4bdde490cad5_630x_1_ln3thh.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  height: 85vh;
+  width: 85vh;
+  margin-left: 4.5rem;
+}
+
+main> .Shop > .Sneakers > .weatherproof > h3 {
+  font-weight: 300;
+  font-size: 2rem;
+  color: var(--footer-font-color);
+  text-align: center;
+  align-items: center;
+  padding-top: 50%;
+  margin-right: 3rem;
+}
+main> .Shop > .Sneakers > .weatherproof > p {
+  font-weight: 250;
+  color: var(--footer-font-color);
+  text-align: center;
+  align-items: center;
+  padding-top: 2%;
+}
+
+main> .Shop > .Sneakers > .weatherproof > button {
+  border-color: transparent;
+background-color: #eeeee6;
+padding: 0.6rem 2.9rem;
+color: var(--primary-font-color);
+width: fit-content;
+height: fit-content;
+border-radius: 2rem;
+font-size: 16px;
+font-weight:300;
+text-align: center;
+transition: color 0.3s ease-in-out;
+margin-top: 4%;
+margin-inline: 30%;
+}
+
+main> .Shop > .Sneakers > .weatherproof > button:hover {
+  background-color: #3ed19f;
+}
+
+main> .Shop > .Sneakers > .water-friendly {
+  background-image: url(https://res.cloudinary.com/denhjko8q/image/upload/v1680461447/Water-friendly_9e980aaa-cf53-407b-a371-304a53fa3d9f_630x_ayq6py.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  height: 85vh;
+  width: 85vh;
+  margin-left: 1.5rem;
+  margin-right: 4.5rem;
+}
+
+main> .Shop > .Sneakers > .water-friendly > h3 {
+  font-weight: 300;
+  font-size: 2rem;
+  color: var(--footer-font-color);
+  text-align: center;
+  align-items: center;
+  padding-top: 50%;
+  margin-right: 3rem;
+}
+main> .Shop > .Sneakers > .water-friendly > p {
+  font-weight: 250;
+  color: var(--footer-font-color);
+  text-align: center;
+  align-items: center;
+  padding-top: 2%;
+}
+
+main> .Shop > .Sneakers > .water-friendly > button {
+  border-color: transparent;
+background-color: #eeeee6;
+padding: 0.6rem 2.9rem;
+color: var(--primary-font-color);
+width: fit-content;
+height: fit-content;
+border-radius: 2rem;
+font-size: 16px;
+font-weight:300;
+text-align: center;
+transition: color 0.3s ease-in-out;
+margin-top: 4%;
+margin-inline: 30%;
+}
+
+main> .Shop > .Sneakers > .water-friendly > button:hover {
+  background-color: #3ed19f;
+}
+
+@media screen and (min-width:1189px) and (max-width:1250px) {
+  
+  main> .Shop > .Sneakers > .weatherproof {
+    background-image: url(https://res.cloudinary.com/denhjko8q/image/upload/v1680461445/Weatherproof_950d4ba3-5525-4941-beb5-4bdde490cad5_630x_1_ln3thh.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    height: 75vh;
+    width: 75vh;
+  margin-left: 2rem;
+  }
+
+  main> .Shop > .Sneakers > .water-friendly {
+    background-image: url(https://res.cloudinary.com/denhjko8q/image/upload/v1680461447/Water-friendly_9e980aaa-cf53-407b-a371-304a53fa3d9f_630x_ayq6py.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    height: 75vh;
+    width: 75vh;
+    margin-left: 2rem;
+    margin-right: 1rem;
+  }
+ }
+
+ @media screen and (min-width:991px) and (max-width:1189px) {
+  
+  main> .Shop > .Sneakers > .weatherproof {
+    background-image: url(https://res.cloudinary.com/denhjko8q/image/upload/v1680461445/Weatherproof_950d4ba3-5525-4941-beb5-4bdde490cad5_630x_1_ln3thh.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    height: 65vh;
+    width: 65vh;
+  margin-left: .5rem;
+  }
+
+  main> .Shop > .Sneakers > .water-friendly {
+    background-image: url(https://res.cloudinary.com/denhjko8q/image/upload/v1680461447/Water-friendly_9e980aaa-cf53-407b-a371-304a53fa3d9f_630x_ayq6py.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    height: 65vh;
+    width: 65vh;
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+ }
+
+
+ @media screen and (min-width:775px) and (max-width:991px) {
+  
+  main> .Shop > .Sneakers > .weatherproof {
+    background-image: url(https://res.cloudinary.com/denhjko8q/image/upload/v1680461445/Weatherproof_950d4ba3-5525-4941-beb5-4bdde490cad5_630x_1_ln3thh.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    height: 95vh;
+    width: 95vh;
+  margin-left: 4rem;
+  margin-bottom: 2rem;
+  }
+
+  main> .Shop > .Sneakers > .water-friendly {
+    background-image: url(https://res.cloudinary.com/denhjko8q/image/upload/v1680461447/Water-friendly_9e980aaa-cf53-407b-a371-304a53fa3d9f_630x_ayq6py.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    height: 95vh;
+    width: 95vh;
+margin-left: 4rem;
+  }
+ }
+
+ @media screen and (min-width:520px) and (max-width:775px) {
+  
+  main> .Shop > .Sneakers > .weatherproof {
+    background-image: url(https://res.cloudinary.com/denhjko8q/image/upload/v1680461445/Weatherproof_950d4ba3-5525-4941-beb5-4bdde490cad5_630x_1_ln3thh.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    height: 60vh;
+    width: 60vh;
+  margin-left: 3.5rem;
+  margin-right: 2.5rem;
+  margin-bottom: 2rem;
+  }
+
+  main> .Shop > .Sneakers > .water-friendly {
+    background-image: url(https://res.cloudinary.com/denhjko8q/image/upload/v1680461447/Water-friendly_9e980aaa-cf53-407b-a371-304a53fa3d9f_630x_ayq6py.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    height: 60vh;
+    width: 60vh;
+  margin-left: 3.5rem;
+  margin-right: 2.5rem;
+  }
+ }
+
+ @media screen and (min-width:390px) and (max-width:520px) {
+  
+  main> .Shop > .Sneakers > .weatherproof {
+    background-image: url(https://res.cloudinary.com/denhjko8q/image/upload/v1680461445/Weatherproof_950d4ba3-5525-4941-beb5-4bdde490cad5_630x_1_ln3thh.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    align-items: center;
+    height: 55vh;
+    width: 55vh;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  margin-bottom: 2rem;
+  }
+
+  main> .Shop > .Sneakers > .water-friendly {
+    background-image: url(https://res.cloudinary.com/denhjko8q/image/upload/v1680461447/Water-friendly_9e980aaa-cf53-407b-a371-304a53fa3d9f_630x_ayq6py.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    align-items: center;
+    height: 55vh;
+    width: 55vh;
+margin-left: 1.5rem;
+margin-right: 1.5rem;
+  }
+ }
+
+ @media screen and (min-width:150px) and (max-width:390px) {
+  
+  main> .Shop > .Sneakers > .weatherproof {
+    background-image: url(https://res.cloudinary.com/denhjko8q/image/upload/v1680461445/Weatherproof_950d4ba3-5525-4941-beb5-4bdde490cad5_630x_1_ln3thh.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    height: 45vh;
+    width: 45vh;
+margin-left: .5rem;
+margin-right: .5rem;
+  margin-bottom: 2rem;
+  }
+
+  main> .Shop > .Sneakers > .water-friendly {
+    background-image: url(https://res.cloudinary.com/denhjko8q/image/upload/v1680461447/Water-friendly_9e980aaa-cf53-407b-a371-304a53fa3d9f_630x_ayq6py.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    height: 45vh;
+    width: 45vh;
+margin-left: .5rem;
+margin-right: .5rem;
+  }
+ }
+
+/*2ºcarrusel de imagenes*/
+
+main > .Shop-sneakers > .buttons-sneakers > .static-button-weather {
+  background-color: var(--background-color-footer);
+  color: var(--footer-font-color);
+  border-color: transparent;
+  width: fit-content;
+  padding: 0.6rem 0.9rem;
+  margin-left: 4rem;
+height: 2.7rem;
+border-radius: 2.2rem;
+font-size: 1rem;
+font-weight:280;
+margin-top: 6rem;
+
+}
+
+main > .Shop-sneakers > .buttons-sneakers > .dinamic-button-water {
+  background-color: var(--background-color);
+  color: var(--primary-font-color);
+  border: 1px solid;
+  border-radius: 2.2rem;
+  width: fit-content;
+  box-shadow: none;
+  padding: 0.6rem 0.9rem;
+  margin-left: 1.5rem;
+height: 2.7rem;
+font-size: 1rem;
+font-weight:280;
+margin-bottom: 2rem;
+margin-top: 6rem;
+}
+
+main > .Shop-sneakers > .buttons-sneakers > .dinamic-button-water {
+  transition: color 0.4s ease-in-out;
+  transition: color 0.4 ease-out;
+}
+main > .Shop-sneakers > .buttons-sneakers > .dinamic-button-water:hover { 
+  background-color: var(--background-color-footer);
+  color:var(--background-color);
+}
+
+main > .Shop-sneakers > .sneakers-images {
+  display: flex;
+  gap: 2vh;
+  padding-left: 3.75rem;
+  padding-bottom: 3rem;
+  align-items: stretch;
+  align-self: stretch;
+  justify-content: flex-start;
+  overflow: hidden;
+  overflow-x: visible;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+}
+
+
+ .Shop-sneakers > .sneakers-images > picture > a > img {
+  height: 55vh;
+  width: 55vh; 
+ }
+
+
+ figcaption {
+  font-size: 15px;
+  font-weight: 300;
+  text-align: left;
+  margin-top: 1rem;
+ }
+
+ .names-products >p {
+  margin-top: 1rem;
+ }
+
+ @media screen and (min-width: 650px) and (max-width: 991px) {
+
+ 
+main > .Shop-sneakers > .buttons-sneakers > .static-button-weather {
+    margin-left: 3rem;
+  } 
+
+  main > .Shop-sneakers > .sneakers-images {
+    padding-left: 3rem;
+  }
+  
+  .Shop-sneakers > .sneakers-images > picture > a > img {
+    height: 45vh;
+    width: 45vh; 
+   }
+ }
+
+ @media screen and (min-width: 355px) and (max-width: 650px) {
+  
+
+  main > .Shop-sneakers > .buttons-sneakers > .static-button-weather {
+    margin-left: 2rem;
+  } 
+
+  main > .Shop-sneakers > .sneakers-images {
+    padding-left: 2rem;
+  }
+
+  .Shop-sneakers > .sneakers-images > picture > a > img {
+    height: 35vh;
+    width: 35vh; 
+   }
+ }
+
+ @media screen and (min-width: 150px) and (max-width: 355px) {
+
+ 
+main > .Shop-sneakers > .buttons-sneakers > .static-button-weather {
+    margin-left: 1rem;
+  } 
+
+  main > .Shop-sneakers > .buttons-sneakers > .dinamic-button-water {
+    margin-left: 1rem;
+    margin-top: 1rem;
+  }
+
+  main > .Shop-sneakers > .sneakers-images {
+    padding-left: 1rem;
+  }
+
+ .Shop-sneakers > .sneakers-images > picture > a > img {
+    height: 25vh;
+    width: 25vh; 
+   }
+ }
+
+
+main > .Shop-sneakers > .section2-3-title > h3{
+  font-weight: 300;
+  font-size: 1.8rem;
+  font-family: "roboto", sans-serif;
+  color: var(--primary-font-color);
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
+  padding-right: 3%;
+}
+
+main> .Shop-sneakers > .Backpack {
+  display: flex;
+  flex-wrap: wrap;
+}
+main> .Shop-sneakers > .Backpack > .back {
+  background-image: url(https://res.cloudinary.com/denhjko8q/image/upload/v1680703427/Backpacks-Menu-pic-categories-1080x800_87fb300f-dd92-4c73-9a4d-a4da96a946dc_dlvkrd.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  height: 85vh;
+  width: 85vh;
+  margin-left: 4.5rem;
+}
+
+main> .Shop-sneakers > .Backpack > .back > h3 {
+  font-weight: 300;
+  font-size: 2rem;
+  color: var(--footer-font-color);
+  text-align: center;
+  margin-right: 3rem;
+  padding-top: 50%;
+}
+
+
+main> .Shop-sneakers > .Backpack > .back > button {
+  border-color: transparent;
+background-color: #eeeee6;
+padding: 0.6rem 2.9rem;
+color: var(--primary-font-color);
+width: fit-content;
+height: fit-content;
+border-radius: 2rem;
+font-size: 16px;
+font-weight:300;
+text-align: center;
+transition: color 0.3s ease-in-out;
+margin-top: 4%;
+margin-inline: 30%;
+}
+
+main> .Shop-sneakers > .Backpack > .back > button:hover {
+  background-color: #3ed19f;
+}
+
+main> .Shop-sneakers > .Backpack > .luggage {
+  background-image: url(https://res.cloudinary.com/denhjko8q/image/upload/v1680703428/Luggage-4_630x_aklz2c.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  height: 85vh;
+  width: 85vh;
+  margin-left: 1.5rem;
+  margin-right: 4.5rem;
+}
+
+main> .Shop-sneakers > .Backpack > .luggage > h3 {
+  font-weight: 300;
+  font-size: 2rem;
+  color: var(--footer-font-color);
+  text-align: center;
+  align-items: center;
+  margin-right: 3rem;
+  padding-top: 50%;
+}
+
+main> .Shop-sneakers > .Backpack > .luggage > button {
+  border-color: transparent;
+background-color: #eeeee6;
+padding: 0.6rem 2.9rem;
+color: var(--primary-font-color);
+width: fit-content;
+height: fit-content;
+border-radius: 2rem;
+font-size: 16px;
+font-weight:300;
+text-align: center;
+transition: color 0.3s ease-in-out;
+margin-top: 4%;
+margin-inline: 30%;
+}
+
+main> .Shop-sneakers > .Backpack > .luggage > button:hover {
+  background-color: #3ed19f;
+}
+
+
+
+/* Footer */
+
+footer {
+ background-color: var(--background-color-footer);
+ color: var(--footer-font-color);
+ font-size: 15.75px;
+ margin-top: 3rem;
+ padding-bottom: 2rem;
+}
+
+footer > section > .links-social-media > ul > li > a > svg {
+  display: flex;
+}
+
+footer > section {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 107px;
+  padding-left: 74px;
+  padding-right: 205px;
+  font-weight: lighter;
+  align-items: flex-start;
+}
+
+
+
+footer > section > .Support-links > ul> h4 {
+  padding-bottom: 0.6rem;
+}
+
+footer > section > .contact-links > ul > h4 {
+  padding-bottom: 0.6rem;
+}
+
+.get-in-touch-links > ul > h4 {
+  padding-bottom: 0.6rem;
+}
+
+footer > section > .links-social-media > ul > li {
+  padding-bottom: 0.5rem;  
+}
+footer > section > .Support-links > ul > li {
+  padding-bottom: 0.5rem;
+}
+footer > section > .contact-links > ul > li {
+  padding-bottom: 0.5rem;
+}
+footer > section > .get-in-touch-links > ul > li {
+  padding-bottom: 0.5rem;
+}
+
+footer > section > .links-social-media > a > img {
+size: 1vh;
+height: 4vh;
+justify-content: center;
+align-items: center;
+padding-left: 1rem;
+}
+
+footer > section > .links-social-media > ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding-top: 6rem;
+  padding-bottom: 2rem;
+}
+
+footer > section > .Support-links > ul > li > a {
+  transition: color 0.3s ease-in-out;
+}
+footer > section > .Support-links > ul > li > a:hover { color: #3ed19f;
+}
+
+footer > section > .contact-links > ul > li > a {
+  transition: color 0.3s ease-in-out;
+}
+footer > section > .contact-links > ul > li > a:hover { color: #3ed19f;
+}
+
+footer > section > .get-in-touch-links > ul > li > a {
+  transition: color 0.3s ease-in-out;
+}
+footer > section > .get-in-touch-links > ul > li > a:hover { color: #3ed19f;
+}
+
+footer > section > .links-social-media > ul > li > a > svg {
+  fill: #ffffff;
+  height: 1.2rem;
+  padding bottom: 2rem;
+}
+
+footer > section > .links-social-media > ul > li > a > svg {
+  transition: fill 0.3s ease-in-out;
+}
+footer > section > .links-social-media > ul > li > a> svg:hover { 
+  fill: #3ed19f;
+  cursor: pointer;
+}
+
+.line {
+  border-top: 1px solid white;
+  padding-top: 1rem;
+  padding-bottom: 0rem;
+  height: 2px;
+  width: 90%;
+  justify-content: center;
+  margin-left: 5%;
+}
+
+div {
+  padding: 0 0 0 5%; 
+}
+
+.terms > .tropicfeel-rights {
+  color: #3ed19f;
+  font-size: 0.9rem;
+  padding-bottom: 1rem;
+  background-color: #262626;
+}
+
+.terms > a {
+  font-size: 0.9rem;
+  font-weight: 200;
+  padding-bottom: 2rem;
+  
+}
+
+.terms > a::after {
+  content: "|";
+  margin-left: .5rem;
+  margin-right: .5rem;
+}
+
+.terms >a::before {
+  padding: .5rem;
+}
+
+
+
