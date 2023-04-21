@@ -27,8 +27,7 @@ html {
 
 body {
   background-color: var(--background-color);
-  font-color:var(--primary-font-color)
-  padding: 0 3.75rem;
+  color:var(--primary-font-color);
 }
 
 h1 {
@@ -71,13 +70,13 @@ header > nav > section {
 
 header > nav > section > .hamburger {
   display: flex;
-  padding: 0, 2rem;
+  padding: 0;
 }
 header > nav > section > .hamburger > ul {
   display: flex;
-  height: 10vh;
   gap: 5vh;
   padding-left: 2.3rem;
+  padding-top: .5rem;
 } 
 
 .rc-section-header--nav-link_1 {
@@ -134,7 +133,7 @@ li > .rc-section-header--nav-link_2 {
   .hamburger-label {
     display: block;
     padding: 0 0 0 2%;
-    z-index: 12;
+    z-index: 2;
   }
 
   /* TOGGLE SHOW/HIDE NAV */
@@ -171,6 +170,9 @@ li > .rc-section-header--nav-link_2 {
   }
 }
 
+
+  
+
 header > nav > section > .logo > img {
   height: 4vh;
   size: 2vh;
@@ -200,8 +202,11 @@ header > nav > section > .links > ul > li > a > img {
 }
 
 header > .header-description {
-  padding-left: 9vh;
-  padding-top: 25vh;
+  /*padding-left: 9vh;
+  padding-top: 25vh;*/
+  display: flex;
+  flex-direction: column;
+  padding-top: 8%;
 }
 
 header > .header-description > h2 {
@@ -226,6 +231,31 @@ font-size: 16px;
 font-weight:300;
 }
 
+@media screen and (min-width:150px) and (max-width:991px) {
+
+  header > nav > section {
+    display:flex;
+    justify-content: flex-start;
+    padding-top: 35px;
+    margin-top: 0px;
+  }
+
+header > nav > section > .hamburger > ul {
+  display: none;
+}
+
+.explore {
+display: none;
+  } 
+
+  header > nav > section > .logo {
+    flex-grow: 4;
+  padding-left: 1.5rem;
+  align-items: center;
+  }
+
+}
+
 @media screen and (min-width:489px) and (max-width:880px) {
   header {
     background-image: url(https://res.cloudinary.com/denhjko8q/image/upload/v1679512709/230321-Banner-Desktop-Homepage-Easter_d0b395cd-d8b9-4646-b7d8-bc9c7dde6b2f_1950x_yi2x0g.jpg);
@@ -237,12 +267,15 @@ font-weight:300;
   }
 
 header > .header-description {
-padding-left: 1vh;
-margin-top: 2vh;
+padding-left: 2%;
+}
+header > .header-description > h1 {
+  font-size: 2.3rem;
 }
 
 header > .header-description > h2 {
   padding-bottom: 8px;
+  font-size: 2.2rem;
 }
 
 header > .header-description > p {
@@ -263,7 +296,7 @@ font-weight:300;
 }
 }
 
-@media screen and (min-width:150px) and (max-width:489px) {
+@media screen and (min-width:259px) and (max-width:489px) {
   header {
     background-image: url(https://res.cloudinary.com/denhjko8q/image/upload/v1679512671/230321-Banner-Mobile-Homepage-Easter_c0a0f5e9-5622-4e76-b8e1-289f88b43745_810x_g1nsna.jpg);
     background-size: auto 100%;
@@ -273,19 +306,65 @@ font-weight:300;
   width: 100%;
   }
 
- .header-description {
-   padding-left: 1vh;
-   margin-top: 1rem;
+  header > .header-description {
+    padding-left: 2%;
+    text-align: left;
+  }
+  header > .header-description > h1 {
+    font-size: 2.3rem;
+  }
+  
+      header > .header-description > h2 {
+        padding-bottom: 8px;
+        font-size: 2.2rem;
+      }
+      
+      header > .header-description > p {
+        font-weight: 300;
+        padding-bottom: 1.6rem;
+      }   
+
+  header > .header-description > button {
+    font-size: 12px;
+    margin-left: 4%;
+    padding: 0.5rem 2.5rem;
+  }
+}
+
+@media screen and (min-width:150px) and (max-width:258px) {
+  header {
+    background-image: url(https://res.cloudinary.com/denhjko8q/image/upload/v1679512671/230321-Banner-Mobile-Homepage-Easter_c0a0f5e9-5622-4e76-b8e1-289f88b43745_810x_g1nsna.jpg);
+    background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  height: 770px;
+  width: 100%;
+  }
+
+ header > .header-description {
+  padding-left: 2%;
+  text-align: center;
+}
+
+header > .header-description > h1 {
+  font-size: 1.7rem;
 }
 
     header > .header-description > h2 {
       padding-bottom: 8px;
+      font-size: 1.5rem;
     }
     
     header > .header-description > p {
       font-weight: 300;
       padding-bottom: 1.5rem;
     }   
+
+    header > .header-description > button {
+      font-size: 12px;
+     margin-left: 15%;
+    padding: 0.4rem 1.5rem;
+    }
 }
 
 /* main */
@@ -953,7 +1032,6 @@ main> .Shop-sneakers > .Backpack > .luggage > button:hover {
 }
 
 
-
 /* Footer */
 
 footer {
@@ -964,12 +1042,13 @@ footer {
  padding-bottom: 2rem;
 }
 
-footer > section > .links-social-media > ul > li > a > svg {
+footer > section > .links-social-media > .svg-social-media > li > a > svg {
   display: flex;
 }
 
 footer > section {
   display: flex;
+  flex-wrap:wrap;
   justify-content: space-between;
   padding-top: 107px;
   padding-left: 74px;
@@ -977,8 +1056,6 @@ footer > section {
   font-weight: lighter;
   align-items: flex-start;
 }
-
-
 
 footer > section > .Support-links > ul> h4 {
   padding-bottom: 0.6rem;
@@ -992,7 +1069,7 @@ footer > section > .contact-links > ul > h4 {
   padding-bottom: 0.6rem;
 }
 
-footer > section > .links-social-media > ul > li {
+footer > section > .links-social-media > .svg-social-media  > li {
   padding-bottom: 0.5rem;  
 }
 footer > section > .Support-links > ul > li {
@@ -1013,7 +1090,7 @@ align-items: center;
 padding-left: 1rem;
 }
 
-footer > section > .links-social-media > ul {
+footer > section > .links-social-media > .svg-social-media {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1040,16 +1117,16 @@ footer > section > .get-in-touch-links > ul > li > a {
 footer > section > .get-in-touch-links > ul > li > a:hover { color: #3ed19f;
 }
 
-footer > section > .links-social-media > ul > li > a > svg {
+footer > section > .links-social-media > .svg-social-media > li > a > svg {
   fill: #ffffff;
   height: 1.2rem;
-  padding bottom: 2rem;
+  padding-bottom: 2rem;
 }
 
-footer > section > .links-social-media > ul > li > a > svg {
+footer > section > .links-social-media > .svg-social-media > li > a > svg {
   transition: fill 0.3s ease-in-out;
 }
-footer > section > .links-social-media > ul > li > a> svg:hover { 
+footer > section > .links-social-media > .svg-social-media > li > a> svg:hover { 
   fill: #3ed19f;
   cursor: pointer;
 }
@@ -1090,6 +1167,11 @@ div {
 
 .terms >a::before {
   padding: .5rem;
+}
+
+@media screen and (min-width: 150px) (max-width: 668px) {
+
+
 }
 
 
